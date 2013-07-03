@@ -20,7 +20,8 @@ button2.onmousedown = function(){
    buttonclicked2=true;
 };
 
-button2.onmouseup = function(){
+button2.onmouseup = function(){button2clicked()};
+var button2clicked = function(){
 	if(buttonclicked2){
 		ctxb2.drawImage(buttonI2,0,0);
 		if(!pet.isBusy && !pet.isDead && pet.level!=0){	

@@ -21,7 +21,8 @@ button1.onmousedown = function(){
     
 };
 
-button1.onmouseup = function(){
+button1.onmouseup = function(){button1clicked()};
+var button1clicked = function(){
 	if(buttonclicked1){
 		ctxb1.drawImage(buttonI1,0,0);
 		if(lightscreen){//if screen is lights, button 1 functions differently

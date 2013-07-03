@@ -24,7 +24,48 @@
 				buttonclicked2=false;
 				buttonclicked3=false;
 			};
-			
+			function checkQAZdown(){
+				var x;
+				if(window.event) // IE8 and earlier
+					{
+					x=event.keyCode;
+					}
+				else if(event.which) // IE9/Firefox/Chrome/Opera/Safari
+					{
+					x=event.which;
+					}
+				keychar=String.fromCharCode(x);
+				if(keychar=='Q'){
+					ctxb1.drawImage(buttondownI1,0,0);
+					buttonclicked1=true;
+				}
+				else if (keychar=='A'){
+					ctxb2.drawImage(buttondownI2,0,0);
+					buttonclicked2=true;
+				}
+				else if (keychar=='Z'){
+					ctxb3.drawImage(buttondownI3,0,0);
+					buttonclicked3=true;
+				}
+			};
+			function checkQAZup(){
+				var x;
+				if(window.event) // IE8 and earlier
+					{
+					x=event.keyCode;
+					}
+				else if(event.which) // IE9/Firefox/Chrome/Opera/Safari
+					{
+					x=event.which;
+					}
+				keychar=String.fromCharCode(x);
+				if(keychar=='Q')
+					button1clicked();
+				else if (keychar=='A')
+					button2clicked();
+				else if (keychar=='Z')
+					button3clicked();
+			};
 			</script>
 			<script>
 			function selectionPlayer()
@@ -70,7 +111,7 @@
 					document.getElementById("cone1").innerHTML = ("<b>Instructions</b>");
 					document.getElementById("ctwo2").innerHTML = ("<b>Taking Care</b>");
 					document.getElementById("ctwo3").innerHTML = ("<b><u>Help</u></b>");
-					document.getElementById("instruct").innerHTML = ("Top button: &nbsp&nbsp&nbsp&nbsp&nbspTo navigate around the icons. <br> Middle button: &nbspTo confirm an action. <br>Bottom button: To cancel an action.");
+					document.getElementById("instruct").innerHTML = ("Top button: &nbsp&nbsp&nbsp&nbsp&nbspTo navigate around the icons. <br> Middle button: &nbspTo confirm an action. <br>Bottom button: To cancel an action.<br> Alternatively, you can use Q,A and Z for the buttons.");
 				}
 			
 			};
@@ -308,7 +349,7 @@ user-select: none;
 
            </style>
                  
-           <body onmouseup = "mouseup()" onload = "loadName()">
+           <body onmouseup = "mouseup()" onload = "loadName()" onkeydown="checkQAZdown()" onkeyup="checkQAZup()">
                  
            <div style="position:absolute; width: 509; height: 325; left: 247; top: 60; background: none;">
            

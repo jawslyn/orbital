@@ -20,7 +20,8 @@ button3.onmousedown = function(){
    buttonclicked3=true;
 };
 
-button3.onmouseup = function(){
+button3.onmouseup = function(){button3clicked()};
+var button3clicked = function(){
 	if(buttonclicked3){
 		ctxb3.drawImage(buttonI3,0,0);
 		if(!pet.isBusy){
