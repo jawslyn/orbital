@@ -1,400 +1,138 @@
 
-<!-- Wish list 
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <title> Giftbook</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="../stylesheets/main.css">
-  </head>
-  <body>
-<img src="http://i1351.photobucket.com/albums/p798/jocelynongyt/f094bb87-3cb3-4596-8e8f-b98c2aca31b7_zps11b35373.jpg">
-  </body>
-</html> -->
-
-
-
-<html>
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
 <head>
-           <script LANGUAGE="JavaScript">var a1 = "Welcome to...";var a2 = "The Orbipet Game!";var delay = 1600;b1();function b1() {ID = setTimeout("b2()",delay);document.title = (a1);}function b2() {ID = setTimeout("b1()",delay);document.title = (a2);}</script>        
-			<script>var mouseup= function(){
-				buttonclicked1=false;
-				buttonclicked2=false;
-				buttonclicked3=false;
-			};
+	<meta charset="UTF-8" />
+	<title>Orbigood | NUS Orbital Project by Team Orbigood</title>
 			
-			</script>
-			<script>
-			function selectionPlayer()
-				{
-					document.getElementById("playername").select();
-				};
-			function selectionPet()
-				{
-				document.getElementById("petname").select();
-				};
-			function loadName(){
-				TINY.box.show({html:'<center><br><b>Hello! What is your name?</b></br><br><br><br><form onsubmit="playerName = document.getElementById(&#39;playername&#39;).value; initializeName(); load(); return false"><input required type="text" id="playername" maxlength="13"><input type="submit" value="Next"></form>',width:250,height:100, openjs:function(){selectionPlayer()}, close:false});
-			};
-			function load(){
-				TINY.box.show({html:'<center><br><b>Please enter a name for your pet.</b></br><br><br><br><form onsubmit="startGame(); return false"><input required type="text" id="petname" maxlength="13"><input type="submit" value="Create!"></form>',width:250,height:100, openjs:function(){selectionPet()},close:false});
-			};
-			function initializeName(){
-				document.getElementById("player").innerHTML = ("<center>Hello <i>"+playerName+"</i><br>Please enjoy the game &#58;&#41;");
-			};
-			function changeInstruct1(){
-				if (instructchange == 2 || instructchange == 3){
-					instructchange=1;
-					document.getElementById("cone1").innerHTML = ("<b><u>Instructions</u></b>");
-					document.getElementById("ctwo2").innerHTML = ("<b>Taking Care</b>");
-					document.getElementById("ctwo3").innerHTML = ("<b>Help</b>");
-					document.getElementById("instruct").innerHTML = ("Congrats on your very own Orbipet! Please learn to take care of it. <br>Please feed your pet when it get hungry.<br>Train your pet to make it stronger.<br>Flush the toilet when poop accumulates.<br>When you pet get sick, remember to heal it!<br>Do not forget to turn off the lights when you pet sleeps.<br>As your pet grows, it will evolve and change forms.<br>How well you take care of your pet will determine its evolutionary path.<br>");
-				}
-			
-			};
-			function changeInstruct2(){
-				if (instructchange == 1 || instructchange == 3){
-					instructchange=2;
-					document.getElementById("cone1").innerHTML = ("<b>Instructions</b>");
-					document.getElementById("ctwo2").innerHTML = ("<b><u>Taking Care</u></b>");
-					document.getElementById("ctwo3").innerHTML = ("<b>Help</b>");
-					document.getElementById("instruct").innerHTML = ("Feeding: Use arrow keys to play a snake game to eat.<br>Training: Play scissors-paper-stone with your pet. <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp If your pet wins, it is one successful training.<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspButtons : Top&gt;Scissors&nbsp&nbsp&nbsp&nbspMiddle&gt;Rock&nbsp&nbsp&nbsp&nbspBottom&gt;Paper<br>Flushing: Successfully flush the toilet when the meter reaches maximum!<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Use the middle button to stop the meter.<br>Healing : Aim your syringe to destroy the sickness!<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Use top and bottom buttons to aim and middle button to fire.");
-				}
-			
-			};
-			function changeInstruct3(){
-				if (instructchange == 1 || instructchange == 2){
-					instructchange=3;
-					document.getElementById("cone1").innerHTML = ("<b>Instructions</b>");
-					document.getElementById("ctwo2").innerHTML = ("<b>Taking Care</b>");
-					document.getElementById("ctwo3").innerHTML = ("<b><u>Help</u></b>");
-					document.getElementById("instruct").innerHTML = ("Top button: &nbsp&nbsp&nbsp&nbsp&nbspTo navigate around the icons. <br> Middle button: &nbspTo confirm an action. <br>Bottom button: To cancel an action.");
-				}
-			
-			};
-			</script>
-			<script>
-			function resetGame()
-				{
-				if(!pet.isBusy && pet.level>0)
-					TINY.box.show({html:'<center><br><b>This will erase your game data!</b></br><br><br><br><a href = "javascript:TINY.box.show({html:&#39; <center><br><b>Please enter a name for your pet.</b></br><br><br><br><form onsubmit=&#34;realresetGame(); return false&#34;><input required type=&#34;text&#34; id=&#34;petname&#34; maxlength=&#34;13&#34;><input type=&#34;submit&#34; value=&#34;Create!&#34;></form>&#39;,width:250,height:100,openjs:function(){selectionPet()}});"><button>Ok, I know</button></a>',width:250,height:100});
-				}
-			function realresetGame() {
-					TINY.box.hide();
-					pet.name=document.getElementById('petname').value;
-					clearTimeout( mistakeTimer );
-					iconstat = 0; //0 is default
-					ctxicon.drawImage(iconbartop,0, 0);
-					ctxicon.drawImage(iconbarbot,0, 175);
-					ctxicon.drawImage(iconalertoff,0, 175);
-					clearInterval(mainInt);
-					shitanimation = false;
-					sleepanimation = false;
-					egganimation = false;
-					happyAnimation = false;
-					noAnimation = false;
-					screenleftlimit =0;
-					pet.imagesize= 0;
-					pet.isBusy=false; //if pet is doing stuff
-					pet.chanceToFallSick= 10;// 10/10000 chance of falling sick by default , i.e. 0.1% chance
-					pet.age= 0; //age is seconds
-					pet.level=0; //level 0 is egg, level 1 is baby, level 2 is child, level 3 is adult
-					pet.type= 0; //type is the different evolution paths, child have 2 types, adult have 3 types
-					pet.careMistakes= 0; //care mistakes determine evolution path
-					pet.training= 0; //training is prerequisites to evolve
-					pet.currentFoodLevel= 100;
-					pet.currentFoodCapacity= 0;//the max amount of food pet can consume, this amount will increase as pet grows bigger
-					pet.energyLevel= 100;	//0-100% when energy becomes 0, pet goes to sleep
-					pet.maxEnergy= 100;
-					pet.isDead= false; //if pet died
-					pet.isHungry= false; //if pet is hungry
-					pet.isSleeping= false; //if pet is sleeping
-					pet.isSick= false; //if pet is sick
-					pet.lights= true;//on or off the lights for pet to sleep
-					pet.chanceToShit= 7;
-					pet.pooCount= 0; //how many shit there are
-					pet.willEvolveAt= 39; //countdown time to evolve to next stage, default value is 39, i.e. 30 secs for egg to hatch
-					
-					pet.moveleftbefore=true;
-					pet.moverightbefore=false;
-					pet.stayinspotbefore=false;
-					pet.goingLeft= true;
-					pet.shitcount= 0;
-					pet.x = 103;
-					pet.y = 0;
-					evolveseqcount = 0;
-					eggCount =0;
-					countForEnergy = 0;
-					countForEvolution = 0;
-					timeCounter=0;
-					hungryCount=0;
-					foodattention = false;
-					sickattention = false;
-					hungryOnset=false;
-					overfeedOnset=false;
-					sickOnset = false;
-					sickCounter=0;
-					document.getElementById("pet details").innerHTML = ("<b><u><font size=2>"+pet.name+"'s Details</font></u></b><br><b>Hatching...</b>");
-					setTimeout(function(){mainInt = setInterval(main, 600); },100);//updates per 600 milisecond for egg
-				  }
-			</script>
-		  <style>
-           body 
-                        {
-          background:url(images/templates/blackwhite.png)no-repeat black; background-attachment:fixed;
-		  background-size: 187px 195px;
-			background-position: 877px 0px;  
-           font-family: Tahoma;
-           font-size: 7pt;
-           text-align: justify;
-           color: ffffff;
-           line-height: 14px;
-           margin: 0px;
-           cursor: mouse;}
-		   
-		   ul {margin:0; padding-left:20px}
-#testdiv {width:600px; margin:0px auto; border:1px solid #ccc; padding:20px 25px 12px; background:#fff}
-ul {list-style:none; margin-bottom:12px; padding:0}
-li {font:12px Georgia,Verdana; color:#808080;margin-bottom:4px; padding:3px 5px 4px; border-radius: 10px;border:1px solid #ccc; background:#eee; cursor:default}
-li:hover {border:1px solid #bbb; background:#aaaaaa}
+	
+	<link rel="pingback" href="http://orbigood.tk/xmlrpc.php" />
 
-.tbox {position:absolute; display:none; padding:14px 17px; z-index:900}
-.tinner {border: 3px dotted black; color: #808080; font-size:10pt; padding:15px; -moz-border-radius:5px; border-radius:5px; background:#fff no-repeat 50% 50%; }
-.tmask {position:absolute; display:none; top:0px; left:0px; height:100%; width:100%; background:#000; z-index:800}
-.tclose {position:absolute; top:0px; right:0px; width:30px; height:30px; cursor:pointer; background:url(images/close.png) no-repeat}
-.tclose:hover {background-position:0 -30px}
-                 
-           .b2 {
-           font-size: 8pt;
-           color:#808080;
-           font-family:"tahoma";
-           background: none;
-           font-weight: none;
-           padding: 10px;
-           text-align:left;
-                        }
-                 
-           .b3 {
-           font-size: 8pt;
-           color:#808080;
-           font-family:"tahoma";
-           background: white;
-           border: 3px dotted black;
-           font-weight: none;
-           padding: 10px;
-           text-align:left;
-		   border-radius:10px;
-                        }
+		<!--[if lt IE 9]>
+		<script src="http://orbigood.tk/wp-content/themes/Foxy/js/html5.js" type="text/javascript"></script>
+	<![endif]-->
 
-           .b4 {
-           font-size: 8pt;
-           color:#808080;
-           font-family:"tahoma";
-           background: white;
-           border: 3px dashed black;
-           font-weight: none;
-           padding: 10px;
-           text-align:left;
-		   border-radius:10px;
-		   
-             }
+	<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
 
-           .b5 {
-           font-family: Century Gothic; 
-           font-weight: none;
-           font-size: 20px; 
-           line-height: 20px;
-           background: #FFFFFF;
-           color: Black;
-           border-bottom: 1px dashed #6699FF;
-           border-right: 0px;
-           border-top: 0px;
-           border-left: 0px;
-           text-align: left;
-           padding: 10px;
-             }
-           .b6 {
-           font-size: 8pt;
-           color:#000000;
-           font-family:"tahoma";
-           background: transparent;
-           border-left: 0px;
-           border-top:0px;
-           border-bottom:0px;
-           border-right: 0px;
-           font-weight: none;
-           padding: 10px;
-           text-align:right;
-                        }
-			div{
-			-webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
-			
+	<link rel="alternate" type="application/rss+xml" title="Orbigood &raquo; Feed" href="http://orbigood.tk/?feed=rss2" />
+<link rel="alternate" type="application/rss+xml" title="Orbigood &raquo; Comments Feed" href="http://orbigood.tk/?feed=comments-rss2" />
+<meta content="Foxy v.1.3" name="generator"/><link rel='stylesheet' id='foxy-fonts-open-sans-css'  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,800italic,400,300,700,800&#038;subset=latin,latin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='foxy-fonts-raleway-css'  href='http://fonts.googleapis.com/css?family=Raleway:400,100&#038;subset=latin' type='text/css' media='all' />
+<link rel='stylesheet' id='foxy-style-css'  href='http://orbigood.tk/wp-content/themes/Foxy/style.css?ver=3.5.2' type='text/css' media='all' />
+<link rel='stylesheet' id='et-shortcodes-css-css'  href='http://orbigood.tk/wp-content/themes/Foxy/epanel/shortcodes/css/shortcodes.css?ver=3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='et-shortcodes-responsive-css-css'  href='http://orbigood.tk/wp-content/themes/Foxy/epanel/shortcodes/css/shortcodes_responsive.css?ver=3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='fancybox-css'  href='http://orbigood.tk/wp-content/themes/Foxy/epanel/page_templates/js/fancybox/jquery.fancybox-1.3.4.css?ver=1.3.4' type='text/css' media='screen' />
+<link rel='stylesheet' id='et_page_templates-css'  href='http://orbigood.tk/wp-content/themes/Foxy/epanel/page_templates/page_templates.css?ver=1.8' type='text/css' media='screen' />
+<script type='text/javascript' src='http://orbigood.tk/wp-includes/js/jquery/jquery.js?ver=1.8.3'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://orbigood.tk/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://orbigood.tk/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 3.5.2" />
+		<style>
+			a { color: #4bb6f5; }
+			body { color: #878787; }
+
+			#featured { background-color: #f7a13c; }
+
+			#featured { -webkit-box-shadow: inset 0 0 250px #bd3905; -moz-box-shadow: inset 0 0 250px #bd3905; box-shadow: inset 0 0 250px #bd3905; }
+
+			#top-navigation > ul > li.sfHover > a, #top-navigation > ul > li > a:hover, .mobile_nav, #home-tab-area > ul > li.home-tab-active, #footer-bottom li a:hover, .et-product:hover .et-price-button, .et-products li:hover .et-price-button, #callout { background-color: #ff8a1d; }
+			@media only screen and (max-width: 767px){
+				#callout > strong { background-color: #ff8a1d; }
 			}
-			div.music{
-		font-family:Calibri, sans-serif;
-		position: absolute;
-		color:#8AF9EE;
-		font-size:100%;
-		top: 0%;
-		left: 0%;
-}
-			div.instructions{
-			cursor:crosshair;
-			}
+			#top-navigation > ul > li.sfHover > a, #top-navigation > ul > li > a:hover, #home-tab-area > ul > li.home-tab-active, #footer-bottom li a:hover, .mobile_nav, #callout { -moz-box-shadow: inset 0 0 30px #d9531f; -webkit-box-shadow: inset 0 0 30px #d9531f; box-shadow: inset 0 0 30px #d9531f; }
+
+			#progress-time { background-color: #ed6f1d; }
+			#home-tab-area > ul, .widget h4.widgettitle { border-bottom: 5px solid #ed6f1d; }
+
+				</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /></head>
+<body class="home blog chrome et_includes_sidebar woocommerce">
+	<div id="body-area">
+		<div class="container">
+			<header id="main-header" class="clearfix">
+								<img src="images/logo.png" alt="Orbigood" id="logo"/>
+				<p id="slogan">NUS Orbital Project by Team Orbigood</p>
+
+				<nav id="top-navigation">
+									<ul class="nav">
+						
+																	</ul>
+									</nav>
+
+				<div id="et_mobile_nav_menu"><a href="#" class="mobile_nav closed">Navigation Menu</a></div>			</header> <!-- #main-header -->
+
+
+<div id="section-area">
+
+	<div id="services" class="clearfix">
+<div class="service"><h3></h3><p>Have you ever wanted an <em>online</em> <strong>virtual pet</strong> to keep you company while using the computer?</p>
+</div> <!-- end .service --><div class="service"><h3></h3><p>We present you <strong>Orbipet</strong>! Similar to the popular game known as <strong>Tamagotchi</strong>&#8230; but it is now <em>online</em> and <em>free</em>!</p>
+</div> <!-- end .service --><div class="service last"><h3></h3><p>The application is still <em>under development</em>. But you can test the beta version now!</p>
+</div> <!-- end .service -->	</div> <!-- #services -->
+
+	<a id="callout" href="orbipet.html">
+		<strong>Your very own virtual pet! <span>Orbipet!</span><span style="font-size: 10px">beta version</span></strong>
+		<span>Play now!</span>
+	</a>
+
+</div> <!-- #section-area -->
+
+
+
+
+<div id="home-info" class="clearfix">
+<center>This app is best viewed in <b>Google Chrome</b></center>
+
+	
+
+</div> <!-- #home-info -->
+
+		</div> <!-- .container -->
+	</div> <!-- #body-area -->
+
+	<div id="footer-area">
+		<div class="container">
 			
-           blockquote{
-           font-family:"tahoma";
-           color: #808080;
-           line-height: 7pt;
-           border-left:1px dotted #d0d0d0;
-           border-top:1px dotted #d0d0d0;
-           border-right:1px dotted #d0d0d0;
-           border-bottom:1px dotted #d0d0d0;
-           padding: 3px;
-           text-align: left;
-                        }
+			<div id="footer-bottom" class="clearfix">
+			<ul class="bottom-nav"></ul>
+				<div id="et-social-icons">
+								</div> <!-- #social-icons -->
+			</div> <!-- #footer-bottom -->
+		</div> <!-- .container -->
+	</div> <!-- #footer-area -->
 
-           .photo{
-           border: 1px dashed #d7d7d7;
-           padding: 3px;
-           width: 105px;
-                       }
-					   
-		   .brick{
-			border: 10px double #D4D4D4;
-			border-radius:20px;
-			width: 489;
-			background: none;
-			}
-				
-           A:link
-           { text-decoration: none;
-           font-weight: none;
-           text-transform:none;
-           background: transparent;
-           color: #808080;}
-           A:visited
-           { text-decoration: none;
-           color: #808080;
-           text-transform:none;
-           background: transparent;}
-           A:active
-           { text-decoration: none;
-           text-transform:none;
-           color: black;}
-           A:hover
-           { text-decoration:blink;
-           text-transform:;
-           background: #FFFFFF;
-           color: #3399FF;
-           font-size:11px;
-           font-family:"tahoma";
-           cursor: help;
-           letter-spacing: 3px;}
+	<div id="footer-bottom-area" class="container">
+		<p id="copyright">Brought to you by <b>Orbigood</b></p>
+	</div>
 
-#navbar-iframe {
-   height: 0px;
-   visibility: hidden;
-   display: none;
-}
-             
-
-           </style>
-                 
-           <body onmouseup = "mouseup()" onload = "loadName()">
-                 
-           <div style="position:absolute; width: 509; height: 325; left: 247; top: 60; background: none;">
-           
-		   <div class="brick">
-		   
-		   <canvas id ="gametemplate"></canvas>
-		   <div style="position:absolute; width:66; height: 63; left: 50; top: 50;">
-		   <span style="cursor:crosshair"><canvas id = "button1"></canvas></span>
-		   </div>
-		   <div style="position:absolute; width:66; height: 63; left: 50; top: 125;">
-		   <span style="cursor:crosshair"><canvas id = "button2"></canvas></span>
-		   </div>
-		   <div style="position:absolute; width:66; height: 63; left: 50; top: 200;">
-		   <span style="cursor:crosshair"><canvas id = "button3"></canvas></span>
-		   </div>
-		   </div>
-		   
-		   
-		   <div style="position:absolute; width: 289; height: 205; left: 150; top: 50; background: none ; border: 4px ridge #e6e6e6;">
-		    <div style="position:absolute; height: 30; left: 0; top: 0;">
-		   <canvas id = "iconbar"></canvas>
-		   </div>
-		   <div style="position:absolute; left: 0; top: 30; background-color:#FFF; filter:alpha(opacity=80);">
-		   <canvas id="canvas"></canvas>
-			</div>
-		   </div>
-           </div>
-
-           <div style="position:absolute; width: 205; left: 20; top: 200;">
-		   <div id = "pet details" class=b3>
-		   
-		   </div>
-		   <div style="position: relative; top: 30; width:85"><ul>
-		<li onclick="resetGame()">Reset game</li
-	</ul>
-		   
-		   </div>
-           </div> 
-		<div style="position:absolute; width: 350; height: 130; left: 777; top: 180;" class=b4>
-		<div class = "instructions" id = "cone1" style="position: absolute; top: 5;" onclick="changeInstruct1()"><b><u>Instructions</u></b></div>
-		<div class = "instructions" id = "ctwo2" style="position: absolute; top: 5; left:33%;" onclick="changeInstruct2()"><b>Taking Care</b>	</div>
-		<div class = "instructions" id = "ctwo3" style="position: absolute; top: 5; left:66%;" onclick="changeInstruct3()"><b>Help</b>	</div>
-		
-			<div id= "instruct" style="position:absolute; width: 350; height: 115;left:-1 ;top: 15;" class=b2>
-		   Congrats on your very own Orbipet! Please learn to take care of it. <br>
-		   Please feed your pet when it get hungry.<br>
-		   Train your pet to make it stronger.<br>
-		   Flush the toilet when poop accumulates.<br>
-		   When you pet get sick, remember to heal it!<br>
-		   Do not forget to turn off the lights when you pet sleeps.<br>
-		   As your pet grows, it will evolve and change forms.<br>
-		   How well you take care of your pet will determine its evolutionary path.<br>
-		   </div>
-		   </div>		   
-		   
-		   
-		   <div class = "music"></div>
-			
-
-		   
-		   
-                 
-           <div style="position:absolute; width: 205; left: 20; top: 50;">
-           <br>
-           <div><font color="#AADDEE"><font size="22pt"><b>Orbipet</b></font></font></div>
-           <div class=b3 id = "player">
-           <center>
-		   Hello <i>&#60;Player&#62;</i><br>Please enjoy the game :)
-           </div>
-			<script src="js/template.js"></script>
-			<script src="js/button1.js"></script>
-			<script src="js/button2.js"></script>
-			<script src="js/button3.js"></script>
-			<script src="js/iconbar.js"></script>
-			<script src="js/orbigood1.js"></script>
-			<script src="js/foodgame.js"></script>
-			<script type="text/javascript" src="js/tinybox.js"></script>
-          
-			<body>
-                
-<script>
-window.defaultStatus="                                         PETPET [:";
+	<script type='text/javascript' src='http://orbigood.tk/wp-content/themes/Foxy/js/superfish.js?ver=1.0'></script>
+<script type='text/javascript' src='http://orbigood.tk/wp-content/themes/Foxy/js/jquery.fitvids.js?ver=1.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var et_custom = {"mobile_nav_text":"Navigation Menu"};
+/* ]]> */
 </script>
-
-
-           </div>
-		   
-           </head>
-           </html>
+<script type='text/javascript' src='http://orbigood.tk/wp-content/themes/Foxy/js/custom.js?ver=1.0'></script>
+<script type='text/javascript' src='http://orbigood.tk/wp-content/themes/Foxy/epanel/page_templates/js/fancybox/jquery.easing-1.3.pack.js?ver=1.3.4'></script>
+<script type='text/javascript' src='http://orbigood.tk/wp-content/themes/Foxy/epanel/page_templates/js/fancybox/jquery.fancybox-1.3.4.pack.js?ver=1.3.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var et_ptemplates_strings = {"captcha":"Captcha","fill":"Fill","field":"field","invalid":"Invalid email"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://orbigood.tk/wp-content/themes/Foxy/epanel/page_templates/js/et-ptemplates-frontend.js?ver=1.1'></script>
+</body>
+</html>
