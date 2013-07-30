@@ -87,8 +87,8 @@
 			function changeInstruct1(){
 				if (instructchange == 2 || instructchange == 3){
 					instructchange=1;
-					document.getElementById("cone1").innerHTML = ("<b><u>Instructions</u></b>");
-					document.getElementById("ctwo2").innerHTML = ("<b>Taking Care</b>");
+					document.getElementById("cone1").innerHTML = ("<b><u>Welcome</u></b>");
+					document.getElementById("ctwo2").innerHTML = ("<b>Mini games instructions</b>");
 					document.getElementById("instruct").innerHTML = ("Congrats on your very own Orbipet! Please learn to take care of it. <br>Please feed your pet when it get hungry.<br>Train your pet to make it stronger.<br>Flush the toilet when poop accumulates.<br>When you pet get sick, remember to heal it!<br>Do not forget to turn off the lights when you pet sleeps.<br>As your pet grows, it will evolve and change forms.<br>How well you take care of your pet will determine its evolutionary path.<br>");
 				}
 			
@@ -96,8 +96,8 @@
 			function changeInstruct2(){
 				if (instructchange == 1 || instructchange == 3){
 					instructchange=2;
-					document.getElementById("cone1").innerHTML = ("<b>Instructions</b>");
-					document.getElementById("ctwo2").innerHTML = ("<b><u>Taking Care</u></b>");
+					document.getElementById("cone1").innerHTML = ("<b>Welcome</b>");
+					document.getElementById("ctwo2").innerHTML = ("<b><u>Mini games instructions</u></b>");
 					document.getElementById("instruct").innerHTML = ("Feeding: Use arrow keys to play a snake game to eat.<br>Training: Play scissors-paper-stone with your pet. <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp If your pet wins, it is one successful training.<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspButtons : Top&gt;Scissors&nbsp&nbsp&nbsp&nbspMiddle&gt;Rock&nbsp&nbsp&nbsp&nbspBottom&gt;Paper<br>Flushing: Successfully flush the toilet when the meter reaches maximum!<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Use the middle button to stop the meter.<br>Healing : Aim your syringe to destroy the sickness!<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Use top and bottom buttons to aim and middle button to fire.");
 				}
 			
@@ -394,18 +394,19 @@ user-select: none;
 		   </div>
            </div> 
            
-	<div style="position:absolute; width: 350; left: 790; top: 176;">
+<div style="position:absolute; width: 350; left: 790; top: 176;">
 		<div class = "instructions" id = "cone1" style="position: absolute; top: 10; background-color:white;" onclick="changeInstruct1()"><b><u>Taking care</u></b></div>
 		<div class = "instructions" id = "ctwo2" style="position: absolute; top: 10; background-color:white; left:35%;" onclick="changeInstruct2()"><b>Mini games instructions</b></div>
 		</div>
 		
-			<div id= "instruct" style="position:absolute; width: 350; height: 115;left:-1 ;top: 15;" class=b2>
+		
+		<div id= "instruct" style="position:absolute; width: 350; height: 115;left: 777 ; top: 220;" class=b2>
 		   Congrats on your very own Orbipet! Please learn to take care of it. <br>
 		   Please feed your pet when it get hungry.<br>
 		   Train your pet to make it stronger.<br>
 		   Flush the toilet when poop accumulates.<br>
-		   When you pet get sick, remember to heal it!<br>
-		   Do not forget to turn off the lights when you pet sleeps.<br>
+		   When your pet gets sick, remember to heal it!<br>
+		   Do not forget to turn off the lights when your pet sleeps.<br>
 		   As your pet grows, it will evolve and change forms.<br>
 		   How well you take care of your pet will determine its evolutionary path.<br>
 		   </div>
