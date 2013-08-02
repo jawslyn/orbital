@@ -85,35 +85,25 @@
 				document.getElementById("player").innerHTML = ("<center>Hello <i>"+playerName+"</i><br>Please enjoy the game &#58;&#41;");
 			};
 			function changeInstruct1(){
-				if (instructchange == 2 || instructchange == 3){
+				if (instructchange == 2){
 					instructchange=1;
-					document.getElementById("cone1").innerHTML = ("<b><u>Instructions</u></b>");
-					document.getElementById("ctwo2").innerHTML = ("<b>Taking Care</b>");
-					document.getElementById("ctwo3").innerHTML = ("<b>Help</b>");
-					document.getElementById("instruct").innerHTML = ("Congrats on your very own Orbipet! Please learn to take care of it. <br>Please feed your pet when it get hungry.<br>Train your pet to make it stronger.<br>Flush the toilet when poop accumulates.<br>When you pet get sick, remember to heal it!<br>Do not forget to turn off the lights when you pet sleeps.<br>As your pet grows, it will evolve and change forms.<br>How well you take care of your pet will determine its evolutionary path.<br>");
+					document.getElementById("cone1").innerHTML = ("<b><u>Taking care</u></b>");
+					document.getElementById("ctwo2").innerHTML = ("<b>Mini games instructions</b>");
+					document.getElementById("instruct").innerHTML = ("Congrats on your very own Orbipet! Please learn to take care of it. <br>Please feed your pet when it get hungry.<br>Train your pet to make it stronger.<br>Flush the toilet when poop accumulates.<br>When your pet gets sick, remember to heal it!<br>Do not forget to turn off the lights when your pet sleeps.<br>As your pet grows, it will evolve and change forms.<br>How well you take care of your pet will determine its evolutionary path.<br>");
 				}
-
+			
 			};
 			function changeInstruct2(){
-				if (instructchange == 1 || instructchange == 3){
+					if (instructchange == 1){
 					instructchange=2;
-					document.getElementById("cone1").innerHTML = ("<b>Instructions</b>");
-					document.getElementById("ctwo2").innerHTML = ("<b><u>Taking Care</u></b>");
-					document.getElementById("ctwo3").innerHTML = ("<b>Help</b>");
-					document.getElementById("instruct").innerHTML = ("Feeding: Use arrow keys to play a snake game to eat.<br>Training: Play scissors-paper-stone with your pet. <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp If your pet wins, it is one successful training.<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspButtons : Top&gt;Scissors&nbsp&nbsp&nbsp&nbspMiddle&gt;Rock&nbsp&nbsp&nbsp&nbspBottom&gt;Paper<br>Flushing: Successfully flush the toilet when the meter reaches maximum!<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Use the middle button to stop the meter.<br>Healing : Aim your syringe to destroy the sickness!<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Use top and bottom buttons to aim and middle button to fire.");
+					document.getElementById("cone1").innerHTML = ("<b>Taking care</b>");
+					document.getElementById("ctwo2").innerHTML = ("<b><u>Mini games instructions</u></b>");
+					document.getElementById("instruct").innerHTML = ("Feeding: Play a snake game to eat.<br>Training: Play scissors-paper-stone with your pet. <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp If your pet wins, it is one successful training.<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspButtons : Top&gt;Scissors&nbsp&nbsp&nbsp&nbspMiddle&gt;Rock&nbsp&nbsp&nbsp&nbspBottom&gt;Paper<br>Cleaning: Hit the middle button when the meter reaches maximum to successfully flush the toilet!<br>");
 				}
-
+			
 			};
-			function changeInstruct3(){
-				if (instructchange == 1 || instructchange == 2){
-					instructchange=3;
-					document.getElementById("cone1").innerHTML = ("<b>Instructions</b>");
-					document.getElementById("ctwo2").innerHTML = ("<b>Taking Care</b>");
-					document.getElementById("ctwo3").innerHTML = ("<b><u>Help</u></b>");
-					document.getElementById("instruct").innerHTML = ("Top button: &nbsp&nbsp&nbsp&nbsp&nbspTo navigate around the icons. <br> Middle button: &nbspTo confirm an action. <br>Bottom button: To cancel an action.<br> Alternatively, you can use Q,A and Z for the buttons.");
-				}
-
-			};
+			
+		
 			</script>
 			<script>
 			function resetGame()
@@ -206,7 +196,7 @@ li:hover {border:1px solid #bbb; background:#aaaaaa}
 .tclose {position:absolute; top:0px; right:0px; width:30px; height:30px; cursor:pointer; background:url(images/close.png) no-repeat}
 .tclose:hover {background-position:0 -30px}
                  
-           .b2 {
+            .b2 {
            font-size: 8pt;
            color:#808080;
            font-family:"tahoma";
@@ -221,7 +211,7 @@ li:hover {border:1px solid #bbb; background:#aaaaaa}
            color:#808080;
            font-family:"tahoma";
            background: white;
-           border: 3px dotted black;
+           border: 3px dashed black;
            font-weight: none;
            padding: 10px;
            text-align:left;
@@ -238,7 +228,7 @@ li:hover {border:1px solid #bbb; background:#aaaaaa}
            padding: 10px;
            text-align:left;
 		   border-radius:10px;
-
+		   
              }
 
            .b5 {
@@ -275,7 +265,7 @@ li:hover {border:1px solid #bbb; background:#aaaaaa}
 -moz-user-select: none;
 -ms-user-select: none;
 user-select: none;
-
+			
 			}
 			div.music{
 		font-family:Calibri, sans-serif;
@@ -286,17 +276,25 @@ user-select: none;
 		left: 0%;
 }
 			div.instructions{
-			cursor:crosshair;
+			cursor:pointer;
+			color: #4682b4;
+			font-size: 16px;
+			border-bottom: ;
+           border-right: 3px dashed #fff;
+           border-top: 3px dashed #fff;
+           border-left: 3px dashed #fff;
+		   padding: 6px;
+		   border-radius: 5px;
 			}
-
+			
            blockquote{
            font-family:"tahoma";
            color: #808080;
            line-height: 7pt;
-           border-left:1px dotted #d0d0d0;
-           border-top:1px dotted #d0d0d0;
-           border-right:1px dotted #d0d0d0;
-           border-bottom:1px dotted #d0d0d0;
+           border-left:1px dashed #d0d0d0;
+           border-top:1px dashed #d0d0d0;
+           border-right:1px dashed #d0d0d0;
+           border-bottom:1px dashed #d0d0d0;
            padding: 3px;
            text-align: left;
                         }
@@ -306,14 +304,14 @@ user-select: none;
            padding: 3px;
            width: 105px;
                        }
-
+					   
 		   .brick{
 			border: 10px double #D4D4D4;
 			border-radius:20px;
 			width: 489;
 			background: none;
 			}
-
+				
            A:link
            { text-decoration: none;
            font-weight: none;
@@ -387,29 +385,30 @@ user-select: none;
 
 		   </div>
            </div> 
-		<div style="position:absolute; width: 350; height: 130; left: 777; top: 180;" class=b4>
-		<div class = "instructions" id = "cone1" style="position: absolute; top: 5;" onclick="changeInstruct1()"><b><u>Instructions</u></b></div>
-		<div class = "instructions" id = "ctwo2" style="position: absolute; top: 5; left:33%;" onclick="changeInstruct2()"><b>Taking Care</b>	</div>
-		<div class = "instructions" id = "ctwo3" style="position: absolute; top: 5; left:66%;" onclick="changeInstruct3()"><b>Help</b>	</div>
-
-			<div id= "instruct" style="position:absolute; width: 350; height: 115;left:-1 ;top: 15;" class=b2>
+		<div style="position:absolute; width: 350; height: 130; left: 777; top: 210;" class=b4>
+		</div>
+		
+		<div style="position:absolute; width: 350; left: 790; top: 176;">
+		<div class = "instructions" id = "cone1" style="position: absolute; top: 10; background-color:white;" onclick="changeInstruct1()"><b><u>Taking care</u></b></div>
+		<div class = "instructions" id = "ctwo2" style="position: absolute; top: 10; background-color:white; left:35%;" onclick="changeInstruct2()"><b>Mini games instructions</b></div>
+		</div>
+		
+		
+		<div id= "instruct" style="position:absolute; width: 350; height: 115;left: 777 ; top: 220;" class=b2>
 		   Congrats on your very own Orbipet! Please learn to take care of it. <br>
 		   Please feed your pet when it get hungry.<br>
 		   Train your pet to make it stronger.<br>
 		   Flush the toilet when poop accumulates.<br>
-		   When you pet get sick, remember to heal it!<br>
-		   Do not forget to turn off the lights when you pet sleeps.<br>
+		   When your pet gets sick, remember to heal it!<br>
+		   Do not forget to turn off the lights when your pet sleeps.<br>
 		   As your pet grows, it will evolve and change forms.<br>
 		   How well you take care of your pet will determine its evolutionary path.<br>
 		   </div>
-		   </div>		   
+		   </div>
 
-
-		   <div class = "music"></div>
-
-
-
-
+		<div style="position:absolute; width: 350; height: 60; left: 777; top: 380;" class=b4>
+Top button: &nbsp&nbsp&nbsp&nbsp&nbspTo navigate around the icons. <br> Middle button: &nbspTo confirm an action. <br>Bottom button: To cancel an action.<br> Alternatively, you can use Q,A and Z for the buttons.
+		</div>
                  
            <div style="position:absolute; width: 205; left: 20; top: 50;">
            <br>
